@@ -1,0 +1,32 @@
+{
+  "data": [
+    {
+      "id": "1",
+      "type": "pup",
+      "name": "Babbette",
+      "birthday": "2014-01-01",
+      "image": "https://www.rover.com/blog/wp-content/uploads/2014/08/beagle.jpg"
+    },
+    {
+      "id": "2",
+      "type": "pup",
+      "name": "Barney",
+      "birthday": "2020-03-04",
+      "image": "https://www.dogbreedslist.info/uploads/allimg/dog-pictures/Beagle-2.jpg"
+    },
+    {
+      "id": "3",
+      "type": "pup",
+      "name": "Barry",
+      "birthday": "2017-09-02",
+      "image": "https://i.pinimg.com/originals/46/72/1a/46721a3b672d47e91bbf723fa3c0b36d.jpg"
+    },
+    {
+      "id": "4",
+      "type": "pup",
+      "name": "Billy",
+      "birthday": "2011-08-08",
+      "image": "https://i.pinimg.com/originals/f7/2e/31/f72e31a9a382678f511ba44318da8237.png"
+    }
+  ]
+}

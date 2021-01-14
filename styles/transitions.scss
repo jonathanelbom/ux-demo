@@ -1,0 +1,198 @@
+@import './variables.scss';
+$title-y-offset: 40px;
+
+.instructions {
+    transition: opacity 300ms ease, transform 300ms ease;
+    $yOffset: -50px;
+    
+    &-enter {
+        opacity: 0;
+        transform: translateY($yOffset);
+    }
+
+    &-enter-active {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    &-exit {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    &-exit-active {
+        opacity: 0;
+        transform: translateY($yOffset);
+    }
+}
+
+.prompt {
+    .dialog {
+        transition: height 250ms ease;
+    }
+
+    &-enter {
+        .skrim {
+            transition: opacity 200ms linear;
+            opacity: 0;
+        }
+
+        .dialog {
+            transition: transform 500ms ease 200ms, opacity 200ms ease 200ms;
+            transform: scale(0.3) translateY(-200px);
+            opacity: 0;
+        }
+        
+        .title__top {
+            transition: transform 400ms $ease-out-back 550ms, opacity 300ms ease 550ms;
+            transform: translateY($title-y-offset);
+            opacity: 0;
+        }
+        
+        .title__bottom {
+            transition: transform 400ms $ease-out-back 800ms, opacity 300ms ease 800ms;
+            transform: translateY(-$title-y-offset);
+            opacity: 0;
+        }
+    }
+
+    &-enter-active {
+        .skrim {
+            opacity: 1;
+        }
+
+        .dialog {
+            transform: none;
+            opacity: 1;
+        }
+        
+        .title__top {
+            transform: none;
+            opacity: 1;
+        }
+        
+        .title__bottom {
+            transform: none;
+            opacity: 1;
+        }    
+    }
+
+    &-exit {
+        .skrim {
+            transition: transform  500ms ease, opacity 500ms ease;
+            opacity: 1;
+        }
+
+        .dialog {
+            transition: transform  500ms ease, opacity 500ms ease;
+            opacity: 1;
+        }
+        
+        .title__top {
+            transition: transform  500ms ease, opacity 500ms ease;
+            opacity: 1;
+        }
+        
+        .title__bottom {
+            transition: transform  500ms ease, opacity 500ms ease;
+            opacity: 1;
+        }
+    }
+
+    &-exit-active {
+        overflow: hidden;
+
+        .skrim {
+            opacity: 0;
+        }
+
+        .dialog {
+            transform: translateY(300px);
+            opacity: 0;
+        }
+        
+        .title__top {
+            transform: translateY(150px);
+            opacity: 0;
+        }
+        
+        .title__bottom {
+            transform: translateY(500px);
+            opacity: 0;
+        }
+    }
+}
+
+.content {
+    transition: opacity 250ms ease, max-height 250ms ease;
+    $max-height: 320px;
+
+    &-enter {
+        opacity: 0;
+        max-height: 0;
+    }
+
+    &-enter-active {
+        opacity: 1;
+        max-height: $max-height;
+        overflow: hidden;
+    }
+
+    &-exit {
+        opacity: 1;
+        max-height: $max-height;
+    }
+
+    &-exit-active {
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+    }
+}
+
+.item {
+    $duration: 350ms;
+    $delay: 150ms;
+    $max-height: 56px;
+    $padding: 14px;
+
+    &-enter {
+        transition: opacity $duration ease $delay, max-height $duration ease, padding-top $duration ease, padding-bottom $duration ease;
+        opacity: 0;
+        max-height: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    &-enter-active {
+        opacity: 1;
+        max-height: $max-height;
+        padding-top: $padding;
+        padding-bottom: $padding;
+        overflow: hidden;
+    }
+
+    &-enter-done {
+        opacity: 1;
+        max-height: $max-height;
+        padding-top: $padding;
+        padding-bottom: $padding;
+    }
+
+    &-exit {
+        transition: opacity $duration ease, max-height $duration ease $delay, padding-top $duration ease $delay, padding-bottom $duration ease $delay;
+        opacity: 1;
+        max-height: $max-height;
+        padding-top: $padding;
+        padding-bottom: $padding;
+
+    }
+
+    &-exit-active {
+        opacity: 0;
+        max-height: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+        overflow: hidden;
+    }
+}

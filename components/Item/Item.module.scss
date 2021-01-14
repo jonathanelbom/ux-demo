@@ -1,0 +1,99 @@
+@import '../../styles/variables.scss';
+
+.item {
+    cursor: pointer;
+
+    &:first-child {
+        margin-top: 12px;
+    }
+    
+    &:hover, &:focus {
+        background-color: $dark-darkest;
+        outline: none;
+
+        .controls {
+            display: flex;
+        }
+    }
+
+    @for $i from 1 through 4 {
+        &:nth-child(#{$i}) {
+            .item_inner {
+                animation-delay: 100ms * $i;
+            }
+        }
+    }
+}
+
+.item_inner {
+    display: flex;
+    color: $white;
+    align-items: center;
+    padding-left: 14px;
+    padding-right: 14px;
+    border-radius: 6px;
+}
+
+.item_inner_sort {
+    animation: appear 350ms ease both;
+}
+
+.image {
+    $size: 28px;
+    height: $size;
+    width: $size;
+    border-radius: 4px;
+    margin-right: 12px;
+    background-color: $dark-darkest;
+    background-size: cover;
+    background-position: center;
+
+}
+
+.name {
+    margin-right: 16px;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.birthday {
+    font-size: 10px;
+    line-height: 14px;
+    color: $gray-lighter;
+}
+
+.controls {
+    font-size: 8px;
+    line-height: 12px;
+    flex-grow: 1;
+    display: none;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.enter {
+    padding: 2px 4px;
+    border-radius: 2px;
+    background-color: $gray;
+    margin-right: 6px;
+}
+
+.launch {
+    color: $gray-lighter;
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+        transform: translateX(8px);
+    }
+
+    80% {
+        transform: translateX(-1px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

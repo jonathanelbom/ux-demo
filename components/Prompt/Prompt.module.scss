@@ -1,0 +1,188 @@
+@import '../../styles/variables.scss';
+
+$instruction-bg: rgba(247, 161, 220, .7);
+
+.instructions_wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    position: fixed;
+    top: 25vh;
+    right: 0;
+    left: 0;
+    height: 60vh;
+    
+}
+
+.instructions {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 322px;
+}
+
+.instructions_main {
+    color: $dark;
+    background-color: $instruction-bg;
+    line-height: 22px;
+    padding: 2px 0;
+}
+
+.instructions_start {
+    color: $dark-darkest;
+    margin-top: 22px;
+    font-weight: 300;
+    font-size: 22px;
+    background-color: $instruction-bg;
+    padding: 2px 4px;
+}
+
+.prompt {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.dialog {
+    width: 600px;
+    max-width: 100%;
+    border-radius: 8px;
+    background-color: $dark;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+.skrim {
+    position: absolute;
+    top: 0;
+    right: 0;
+    // bottom: 0;
+    height: 100vh;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.input__row {
+    display: flex;
+    align-items: center;
+}
+
+.input {
+    $border-radius: 6px;
+    padding: 16px 10px;
+    background-color: $dark-darkest;
+    border-radius: $border-radius;
+    border: none;
+    color: $white;
+    font-size: 16px;
+    flex-grow: 1;
+    margin-right: 24px;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.dog__icon {
+    color: $white;
+}
+
+.open__animation > svg {
+    animation: open 500ms ease-in-out;
+}
+
+.close__animation > svg {
+    animation: close 500ms ease-in-out;
+}
+
+.title {
+    color: $white;
+    text-align: center;
+}
+
+.title__top {
+    margin-bottom: 24px;
+}
+
+.title__bottom {
+    margin-top: 24px;
+}
+
+.esc {
+    font-size: 12px;
+    display: inline-block;
+    border: 1px solid $white;
+    border-radius: 4px;
+    padding: 4px 12px;
+    margin: 0 4px;
+}
+
+.toggle {
+    margin-top: 24px;
+    display: flex;
+}
+
+.toggle__option {
+    font-size: 12px;
+    line-height: 16px;
+    padding: 6px 8px;
+    border-radius: 4px;
+    color: $gray-lighter;
+    cursor: pointer;
+
+    &[data-selected="true"] {
+        background-color: $dark-darkest;
+        color: $white;
+    }
+
+    &:hover {
+        color: $white;
+    }
+    &:focus {
+        outline: none;
+    }
+}
+
+.items__title {
+    margin-top: 24px;
+    font-size: 12px;
+    line-height: 16px;
+    color: $white;
+}
+
+@keyframes open {
+    0% {
+        transform: none;
+    }
+
+    50% {
+        transform: rotate(-90deg);
+    }
+
+    100% {
+        transform: none;
+    }
+}
+
+@keyframes close {
+    0% {
+        transform: none;
+    }
+
+    50% {
+        transform: rotate(90deg);
+    }
+
+    100% {
+        transform: none;
+    }
+}

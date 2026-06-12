@@ -1,4 +1,4 @@
-# OpenFin Frontend Challenge <img src="./logo.svg" width="38" height="38" align="top"/>
+# Frontend Challenge <img src="./logo.svg" width="38" height="38" align="top"/>
 
 Build a mini React app implementing [this design](./design.mov)
 
